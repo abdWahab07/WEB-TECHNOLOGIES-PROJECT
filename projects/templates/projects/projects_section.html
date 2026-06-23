@@ -1,0 +1,26 @@
+{% if projects_list %}
+<section class="section projects" id="projects">
+    <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="section-line"></div>
+        <div class="projects-grid">
+            {% for project in projects_list %}
+            <article class="project-card">
+                <h3>{{ project.project_title }}</h3>
+                <p class="project-desc">{{ project.project_description }}</p>
+                <div class="tech-badges">
+                    {% for tech in project.technology_list %}
+                    <span class="tech-badge">{{ tech }}</span>
+                    {% endfor %}
+                </div>
+                {% if project.project_link %}
+                <a href="{{ project.project_link }}" class="project-link" target="_blank" rel="noopener noreferrer">
+                    View Project &rarr;
+                </a>
+                {% endif %}
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}

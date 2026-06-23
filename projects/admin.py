@@ -1,0 +1,9 @@
+from django.contrib import admin
+
+from .models import Project
+
+
+@admin.register(Project)
+class ProjectAdmin(admin.ModelAdmin):
+    list_display = ("project_title", "technologies_used", "project_link")
+    search_fields = ("project_title", "technologies_used")

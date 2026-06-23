@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% if bio %}{{ bio.name }} — {{ bio.job_title }}{% else %}{% block meta_description %}Personal Portfolio{% endblock %}{% endif %}">
+    <title>{% block title %}{% if bio %}{{ bio.name }}{% else %}Portfolio{% endif %}{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header class="site-header" id="top">
+        <nav class="navbar container">
+            <a href="{% url 'home' %}" class="logo">{% if bio %}{{ bio.name }}{% else %}Portfolio{% endif %}</a>
+            {% if portfolios.count > 1 %}
+            <div class="portfolio-switcher" role="group" aria-label="Switch portfolio">
+                {% for portfolio in portfolios %}
+                <a
+                    href="{% url 'switch_portfolio' portfolio.slug %}"
+                    class="portfolio-switch-btn{% if bio and bio.slug == portfolio.slug %} is-active{% endif %}"
+                >
+                    {{ portfolio.name }}
+                </a>
+                {% endfor %}
+            </div>
+            {% endif %}
+            <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <aside class="mobile-drawer" id="navDrawer" aria-hidden="true">
+                <div class="mobile-drawer-header">
+                    <span class="mobile-drawer-title">Menu</span>
+                    <button type="button" class="mobile-drawer-close" id="navClose" aria-label="Close menu">&times;</button>
+                </div>
+                <ul class="nav-links" id="navLinks">
+                    {% if portfolios.count > 1 %}
+                    <li class="portfolio-switcher-mobile">
+                        <span class="portfolio-switcher-label">Portfolio</span>
+                        <div class="portfolio-switcher portfolio-switcher--stacked">
+                            {% for portfolio in portfolios %}
+                            <a
+                                href="{% url 'switch_portfolio' portfolio.slug %}"
+                                class="portfolio-switch-btn{% if bio and bio.slug == portfolio.slug %} is-active{% endif %}"
+                            >
+                                {{ portfolio.name }}
+                            </a>
+                            {% endfor %}
+                        </div>
+                    </li>
+                    {% endif %}
+                    {% if bio %}<li><a href="{% url 'home' %}#hero">Home</a></li>{% endif %}
+                    {% if bio %}<li><a href="{% url 'home' %}#about">About</a></li>{% endif %}
+                    {% if has_education %}<li><a href="{% url 'home' %}#education">Education</a></li>{% endif %}
+                    {% if has_skills %}<li><a href="{% url 'home' %}#skills">Skills</a></li>{% endif %}
+                    {% if has_experience %}<li><a href="{% url 'home' %}#experience">Experience</a></li>{% endif %}
+                    {% if has_projects %}<li><a href="{% url 'home' %}#projects">Projects</a></li>{% endif %}
+                    {% if bio %}<li><a href="{% url 'home' %}#contact">Contact</a></li>{% endif %}
+                </ul>
+                <div class="mobile-drawer-footer" aria-hidden="true">
+                    <span class="mobile-drawer-dot"></span>
+                </div>
+            </aside>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    {% if bio %}
+    <footer class="site-footer" id="contact">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <h3>Let's Connect</h3>
+                {% if bio.job_title %}
+                <p>{{ bio.job_title }}</p>
+                {% endif %}
+            </div>
+            <div class="footer-contact">
+                {% if bio.email %}
+                <p><strong>Email:</strong> <a href="mailto:{{ bio.email }}">{{ bio.email }}</a></p>
+                {% endif %}
+                {% if bio.phone %}
+                <p><strong>Phone:</strong> {{ bio.phone }}</p>
+                {% endif %}
+                {% if bio.linkedin %}
+                <p><strong>LinkedIn:</strong> <a href="{{ bio.linkedin }}" target="_blank" rel="noopener noreferrer">{{ bio.linkedin }}</a></p>
+                {% endif %}
+                {% if bio.github %}
+                <p><strong>GitHub:</strong> <a href="{{ bio.github }}" target="_blank" rel="noopener noreferrer">{{ bio.github }}</a></p>
+                {% endif %}
+                {% if bio.location %}
+                <p><strong>Location:</strong> {{ bio.location }}</p>
+                {% endif %}
+            </div>
+            <p class="copyright">&copy; {% now "Y" %} {{ bio.name }}</p>
+        </div>
+    </footer>
+    {% endif %}
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

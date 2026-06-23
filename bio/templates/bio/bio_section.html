@@ -1,0 +1,30 @@
+{% if bio %}
+<section class="hero" id="hero">
+    <div class="container hero-grid">
+        <div class="hero-text">
+            <p class="hero-greeting">Hello, I'm</p>
+            <h1 class="hero-name">{{ bio.name }}</h1>
+            <p class="hero-title">{{ bio.job_title }}</p>
+            <a href="#about" class="btn btn-primary">Learn More</a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+        <div class="hero-image">
+            {% if bio.profile_picture %}
+            <img src="{{ bio.profile_picture.url }}" alt="Profile photo of {{ bio.name }}">
+            {% else %}
+            <div class="hero-avatar-placeholder" aria-hidden="true">{{ bio.initials }}</div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<section class="section about" id="about">
+    <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="section-line"></div>
+        {% if bio.professional_description %}
+        <p class="about-text">{{ bio.professional_description }}</p>
+        {% endif %}
+    </div>
+</section>
+{% endif %}

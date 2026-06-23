@@ -1,0 +1,29 @@
+{% if skills_list %}
+<section class="section skills" id="skills">
+    <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <div class="section-line"></div>
+        <div class="skills-grid">
+            {% regroup skills_list by skill_category as category_groups %}
+            {% for group in category_groups %}
+            <div class="skill-category-card">
+                <h3>{{ group.grouper }}</h3>
+                <ul class="skill-list">
+                    {% for skill in group.list %}
+                    <li class="skill-item">
+                        <div class="skill-header">
+                            <span>{{ skill.skill_name }}</span>
+                            <span class="skill-level">{{ skill.get_proficiency_level_display }}</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="width: {{ skill.proficiency_percent }}%;"></div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}

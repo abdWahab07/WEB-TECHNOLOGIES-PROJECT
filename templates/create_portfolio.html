@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+
+{% block title %}Create Portfolio{% endblock %}
+
+{% block content %}
+<section class="form-page">
+    <div class="container">
+        <div class="form-page-header">
+            <div>
+                <p class="form-page-label">Portfolio Manager</p>
+                <h1 class="form-page-title">Add Portfolio Details</h1>
+                <p class="form-page-subtitle">
+                    Fill in each section below. Changes appear on the home page after you save.
+                </p>
+            </div>
+            <a href="{% url 'home' %}" class="btn btn-outline">View Portfolio</a>
+        </div>
+
+        {% if messages %}
+        <div class="form-messages">
+            {% for message in messages %}
+            <p class="form-message form-message-{{ message.tags }}">{{ message }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="form-grid">
+            <div class="form-card">
+                <h2 class="form-card-title">Bio &amp; Contact</h2>
+                <p class="form-card-hint">Hero, about section, and footer contact details.</p>
+                <form method="post" enctype="multipart/form-data" class="portfolio-form">
+                    {% csrf_token %}
+                    <input type="hidden" name="form_type" value="bio">
+                    {% for field in bio_form %}
+                    <div class="form-group{% if field.errors %} has-error{% endif %}">
+                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                        {{ field }}
+                        {% if field.help_text %}<span class="form-help">{{ field.help_text }}</span>{% endif %}
+                        {% for error in field.errors %}<span class="form-error">{{ error }}</span>{% endfor %}
+                    </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary">Save Bio</button>
+                </form>
+            </div>
+
+            <div class="form-card">
+                <h2 class="form-card-title">Education</h2>
+                <p class="form-card-hint">Add one degree at a time.</p>
+                <form method="post" class="portfolio-form">
+                    {% csrf_token %}
+                    <input type="hidden" name="form_type" value="education">
+                    {% for field in education_form %}
+                    <div class="form-group{% if field.errors %} has-error{% endif %}">
+                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                        {{ field }}
+                        {% if field.help_text %}<span class="form-help">{{ field.help_text }}</span>{% endif %}
+                        {% for error in field.errors %}<span class="form-error">{{ error }}</span>{% endfor %}
+                    </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary">Add Education</button>
+                </form>
+                {% if education_list %}
+                <div class="form-existing">
+                    <h3>Added Records</h3>
+                    <ul>
+                        {% for edu in education_list %}
+                        <li>{{ edu.degree }} — {{ edu.institute_name }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="form-card">
+                <h2 class="form-card-title">Skills</h2>
+                <p class="form-card-hint">Add skills with category and proficiency level.</p>
+                <form method="post" class="portfolio-form">
+                    {% csrf_token %}
+                    <input type="hidden" name="form_type" value="skill">
+                    {% for field in skill_form %}
+                    <div class="form-group{% if field.errors %} has-error{% endif %}">
+                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                        {{ field }}
+                        {% if field.help_text %}<span class="form-help">{{ field.help_text }}</span>{% endif %}
+                        {% for error in field.errors %}<span class="form-error">{{ error }}</span>{% endfor %}
+                    </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary">Add Skill</button>
+                </form>
+                {% if skills_list %}
+                <div class="form-existing">
+                    <h3>Added Records</h3>
+                    <ul>
+                        {% for skill in skills_list %}
+                        <li>{{ skill.skill_name }} ({{ skill.skill_category }})</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="form-card">
+                <h2 class="form-card-title">Experience</h2>
+                <p class="form-card-hint">Jobs, internships, or volunteer roles.</p>
+                <form method="post" class="portfolio-form">
+                    {% csrf_token %}
+                    <input type="hidden" name="form_type" value="experience">
+                    {% for field in experience_form %}
+                    <div class="form-group{% if field.errors %} has-error{% endif %}">
+                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                        {{ field }}
+                        {% if field.help_text %}<span class="form-help">{{ field.help_text }}</span>{% endif %}
+                        {% for error in field.errors %}<span class="form-error">{{ error }}</span>{% endfor %}
+                    </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary">Add Experience</button>
+                </form>
+                {% if experience_list %}
+                <div class="form-existing">
+                    <h3>Added Records</h3>
+                    <ul>
+                        {% for exp in experience_list %}
+                        <li>{{ exp.role_title }} — {{ exp.organization }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="form-card form-card-wide">
+                <h2 class="form-card-title">Projects</h2>
+                <p class="form-card-hint">Separate technologies with commas.</p>
+                <form method="post" class="portfolio-form">
+                    {% csrf_token %}
+                    <input type="hidden" name="form_type" value="project">
+                    {% for field in project_form %}
+                    <div class="form-group{% if field.errors %} has-error{% endif %}">
+                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                        {{ field }}
+                        {% if field.help_text %}<span class="form-help">{{ field.help_text }}</span>{% endif %}
+                        {% for error in field.errors %}<span class="form-error">{{ error }}</span>{% endfor %}
+                    </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary">Add Project</button>
+                </form>
+                {% if projects_list %}
+                <div class="form-existing">
+                    <h3>Added Records</h3>
+                    <ul>
+                        {% for project in projects_list %}
+                        <li>{{ project.project_title }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

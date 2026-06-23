@@ -1,0 +1,23 @@
+{% if experience_list %}
+<section class="section experience" id="experience">
+    <div class="container">
+        <h2 class="section-title">Experience</h2>
+        <div class="section-line"></div>
+        <div class="experience-grid">
+            {% for exp in experience_list %}
+            <article class="experience-card">
+                <div class="experience-header">
+                    <h3>{{ exp.role_title }}</h3>
+                    <span class="experience-date">{{ exp.date_range }}</span>
+                </div>
+                <p class="experience-org">{{ exp.organization }}</p>
+                <p class="experience-desc">{{ exp.description }}</p>
+                {% if exp.is_current %}
+                <span class="badge badge-current">Current</span>
+                {% endif %}
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
