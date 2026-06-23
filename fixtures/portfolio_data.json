@@ -42,7 +42,7 @@
     "institute_name": "University of Management and Technology (UMT), Lahore",
     "start_year": 2022,
     "end_year": null,
-    "description": "7th Semester — Present. Relevant Courses: Data Structures, OOP, DBMS, Software Engineering, AI, Networks."
+    "description": "7th Semester - Present. Relevant Courses: Data Structures, OOP, DBMS, Software Engineering, AI, Networks."
   }
 },
 {
@@ -54,7 +54,7 @@
     "institute_name": "University of Management and Technology",
     "start_year": 2022,
     "end_year": 2026,
-    "description": "BS Computer Science — 2022 to 2026"
+    "description": "BS Computer Science - 2022 to 2026"
   }
 },
 {
@@ -747,7 +747,7 @@
   "fields": {
     "portfolio": 1,
     "role_title": "Software Engineer",
-    "organization": "iCareManager — United States (US)",
+    "organization": "iCareManager - United States (US)",
     "start_date": "2025-07-01",
     "end_date": null,
     "description": "Led end-to-end development of the Staff Scheduler module using React.js, Next.js, NestJS, ASP.NET Core, TypeScript, and C#. Designed and developed scalable REST APIs and microservices. Implemented advanced state management for complex scheduling workflows. Developed eMAR module features including Vital Readings and Medication Administration. Optimized SQL queries, stored procedures, and backend APIs. Integrated RabbitMQ, Redis, and Azure Service Bus for distributed systems and asynchronous processing. Collaborated with cross-functional teams in Agile/Scrum environments."
@@ -759,7 +759,7 @@
   "fields": {
     "portfolio": 1,
     "role_title": "Associate Software Engineer",
-    "organization": "NETSOL Technologies Ltd. — Lahore, Pakistan",
+    "organization": "NETSOL Technologies Ltd. - Lahore, Pakistan",
     "start_date": "2024-09-01",
     "end_date": "2025-07-01",
     "description": "Contributed to NETSOL Financial Suite (NFS), a large-scale enterprise financing platform. Developed reusable UI framework controls and enterprise screens using Angular, TypeScript, PrimeNG, HTML5, and CSS3. Designed and maintained REST APIs for User Management System and Configuration Management System modules using ASP.NET Core and C#. Optimized application performance through code refactoring, API enhancements, and database improvements. Participated in Agile/Scrum ceremonies, sprint planning, code reviews, and production releases."
@@ -771,7 +771,7 @@
   "fields": {
     "portfolio": 1,
     "role_title": "Software Engineer Intern",
-    "organization": "NETSOL Technologies Ltd. — Lahore, Pakistan",
+    "organization": "NETSOL Technologies Ltd. - Lahore, Pakistan",
     "start_date": "2024-06-01",
     "end_date": "2024-09-01",
     "description": "Supported full-stack web application development using Angular, TypeScript, ASP.NET Core, and C#. Developed REST API endpoints, CRUD operations, and business logic for enterprise applications. Assisted in frontend development, backend development, debugging, testing, and issue resolution. Collaborated with senior engineers in an Agile environment."
