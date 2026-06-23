@@ -11,22 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-<body>
+<body{% if portfolios.count > 1 %} class="has-portfolio-switcher"{% endif %}>
     <header class="site-header" id="top">
         <nav class="navbar container">
             <a href="{% if bio %}{{ bio.home_url }}{% else %}/{% endif %}" class="logo">{% if bio %}{{ bio.name }}{% else %}Portfolio{% endif %}</a>
-            {% if portfolios.count > 1 %}
-            <div class="portfolio-switcher" role="group" aria-label="Switch portfolio">
-                {% for portfolio in portfolios %}
-                <a
-                    href="{{ portfolio.home_url }}"
-                    class="portfolio-switch-btn{% if bio and bio.slug == portfolio.slug %} is-active{% endif %}"
-                >
-                    {{ portfolio.name }}
-                </a>
-                {% endfor %}
-            </div>
-            {% endif %}
             <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu">
                 <span></span>
                 <span></span>
@@ -38,21 +26,6 @@
                     <button type="button" class="mobile-drawer-close" id="navClose" aria-label="Close menu">&times;</button>
                 </div>
                 <ul class="nav-links" id="navLinks">
-                    {% if portfolios.count > 1 %}
-                    <li class="portfolio-switcher-mobile">
-                        <span class="portfolio-switcher-label">Portfolio</span>
-                        <div class="portfolio-switcher portfolio-switcher--stacked">
-                            {% for portfolio in portfolios %}
-                            <a
-                                href="{{ portfolio.home_url }}"
-                                class="portfolio-switch-btn{% if bio and bio.slug == portfolio.slug %} is-active{% endif %}"
-                            >
-                                {{ portfolio.name }}
-                            </a>
-                            {% endfor %}
-                        </div>
-                    </li>
-                    {% endif %}
                     {% if bio %}<li><a href="{{ home_prefix }}/#hero">Home</a></li>{% endif %}
                     {% if bio %}<li><a href="{{ home_prefix }}/#about">About</a></li>{% endif %}
                     {% if has_education %}<li><a href="{{ home_prefix }}/#education">Education</a></li>{% endif %}
@@ -66,6 +39,20 @@
                 </div>
             </aside>
         </nav>
+        {% if portfolios.count > 1 %}
+        <div class="portfolio-switcher-bar">
+            <div class="portfolio-switcher" role="group" aria-label="Switch portfolio">
+                {% for portfolio in portfolios %}
+                <a
+                    href="{{ portfolio.home_url }}"
+                    class="portfolio-switch-btn{% if bio and bio.slug == portfolio.slug %} is-active{% endif %}"
+                >
+                    {{ portfolio.name }}
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
     </header>
 
     <main>
