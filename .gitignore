@@ -17,6 +17,9 @@ db.sqlite3-journal
 media/
 staticfiles/
 
+# Netlify static export (generated locally before deploy)
+netlify_publish/
+
 # IDE
 .vscode/
 .idea/

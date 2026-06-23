@@ -1,10 +1,16 @@
+import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = "django-insecure-t93zefcvhputj%eg1&t+y#qd+3-!v*+5s8s5ix_061xgvs(3zc"
+RENDER = os.environ.get("RENDER") == "true"
 
-DEBUG = True
+SECRET_KEY = os.environ.get(
+    "SECRET_KEY",
+    "django-insecure-t93zefcvhputj%eg1&t+y#qd+3-!v*+5s8s5ix_061xgvs(3zc",
+)
+
+DEBUG = os.environ.get("DEBUG", "True" if not RENDER else "False") == "True"
 
 ALLOWED_HOSTS = [
     "localhost",
@@ -13,6 +19,17 @@ ALLOWED_HOSTS = [
     ".onrender.com",
     ".pythonanywhere.com",
 ]
+
+RENDER_EXTERNAL_HOSTNAME = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.netlify.app",
+    "https://*.onrender.com",
+]
+if RENDER_EXTERNAL_HOSTNAME:
+    CSRF_TRUSTED_ORIGINS.append(f"https://{RENDER_EXTERNAL_HOSTNAME}")
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -59,10 +76,20 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "portfolio_project.wsgi.application"
 
+if RENDER:
+    DATA_DIR = Path("/opt/render/project/src/data")
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    DATABASE_PATH = DATA_DIR / "db.sqlite3"
+    MEDIA_ROOT = DATA_DIR / "media"
+    MEDIA_ROOT.mkdir(parents=True, exist_ok=True)
+else:
+    DATABASE_PATH = BASE_DIR / "db.sqlite3"
+    MEDIA_ROOT = BASE_DIR / "media"
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "NAME": DATABASE_PATH,
     }
 }
 
@@ -95,4 +122,8 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 MEDIA_URL = "media/"
-MEDIA_ROOT = BASE_DIR / "media"
+
+if not DEBUG:
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True

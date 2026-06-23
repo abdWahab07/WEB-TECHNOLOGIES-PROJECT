@@ -1,0 +1,17 @@
+[build]
+  publish = "netlify_publish"
+
+[[redirects]]
+  from = "/portfolio/abdul-wahab/"
+  to = "/"
+  status = 302
+
+[[redirects]]
+  from = "/portfolio/laiba-zainab/"
+  to = "/laiba/"
+  status = 302
+
+[[redirects]]
+  from = "/laiba"
+  to = "/laiba/"
+  status = 302
