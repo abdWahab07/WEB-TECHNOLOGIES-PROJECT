@@ -1,393 +1,846 @@
 [
-  {
-    "model": "bio.bio",
-    "pk": 1,
-    "fields": {
-      "slug": "abdul-wahab",
-      "name": "Abdul Wahab",
-      "job_title": "Software Engineer",
-      "profile_picture": "",
-      "professional_description": "Full Stack Software Engineer with experience building scalable enterprise web applications using React.js, Next.js, Angular, TypeScript, ASP.NET Core, C#, Node.js, and NestJS. Skilled in developing responsive frontend interfaces, secure REST APIs, microservices, database-driven systems, and distributed workflows using PostgreSQL, SQL Server, Redis, RabbitMQ, and Azure Service Bus. Experienced in healthcare and financial software domains, with a focus on performance optimization, clean architecture, API integration, and Agile delivery.",
-      "email": "abdwahab0472@gmail.com",
-      "phone": "",
-      "location": "Lahore, Pakistan",
-      "linkedin": "https://www.linkedin.com/in/abdul-wahab-986478314/",
-      "github": "https://github.com/abdWahab07"
-    }
-  },
-  {
-    "model": "bio.bio",
-    "pk": 2,
-    "fields": {
-      "slug": "laiba-zainab",
-      "name": "Laiba Zainab",
-      "job_title": "Software Engineer | Web Developer | AI/ML Enthusiast",
-      "profile_picture": "",
-      "professional_description": "Computer Science undergraduate at UMT Lahore with hands-on experience in web development, database systems, AI/ML fundamentals, and teaching computer science. Skilled in developing practical software solutions and explaining technical concepts clearly.",
-      "email": "laibazainab358358@gmail.com",
-      "phone": "+92-3429782818",
-      "location": "Lahore, Pakistan",
-      "linkedin": "https://linkedin.com/in/laiba-zainab-61122a411",
-      "github": ""
-    }
-  },
-  {
-    "model": "education.education",
-    "pk": 1,
-    "fields": {
-      "portfolio": 2,
-      "degree": "BS Computer Science",
-      "institute_name": "University of Management and Technology (UMT), Lahore",
-      "start_year": 2022,
-      "end_year": null,
-      "description": "7th Semester â€” Present. Relevant Courses: Data Structures, OOP, DBMS, Software Engineering, AI, Networks."
-    }
-  },
-  {
-    "model": "experience.experience",
-    "pk": 1,
-    "fields": {
-      "portfolio": 2,
-      "role_title": "Computer Science Teacher",
-      "organization": "Bright Future High School",
-      "start_date": "2024-01-01",
-      "end_date": null,
-      "description": "Teach programming, MS Office, and computer science fundamentals while guiding lab activities."
-    }
-  },
-  {
-    "model": "skills.skill",
-    "pk": 1,
-    "fields": {
-      "portfolio": 2,
-      "skill_name": "Java",
-      "skill_category": "Programming",
-      "proficiency_level": "advanced"
-    }
-  },
-  {
-    "model": "skills.skill",
-    "pk": 2,
-    "fields": {
-      "portfolio": 2,
-      "skill_name": "Python",
-      "skill_category": "Programming",
-      "proficiency_level": "advanced"
-    }
-  },
-  {
-    "model": "skills.skill",
-    "pk": 3,
-    "fields": {
-      "portfolio": 2,
-      "skill_name": "C++",
-      "skill_category": "Programming",
-      "proficiency_level": "intermediate"
-    }
-  },
-  {
-    "model": "skills.skill",
-    "pk": 4,
-    "fields": {
-      "portfolio": 2,
-      "skill_name": "SQL",
-      "skill_category": "Programming",
-      "proficiency_level": "intermediate"
-    }
-  },
-  {
-    "model": "skills.skill",
-    "pk": 5,
-    "fields": {
-      "portfolio": 2,
-      "skill_name": "HTML5",
-      "skill_category": "Web Development",
-      "proficiency_level": "advanced"
-    }
-  },
-  {
-    "model": "skills.skill",
-    "pk": 6,
-    "fields": {
-      "portfolio": 2,
-      "skill_name": "CSS3",
-      "skill_category": "Web Development",
-      "proficiency_level": "advanced"
-    }
-  },
-  {
-    "model": "skills.skill",
-    "pk": 7,
-    "fields": {
-      "portfolio": 2,
-      "skill_name": "JavaScript",
-      "skill_category": "Web Development",
-      "proficiency_level": "intermediate"
-    }
-  },
-  {
-    "model": "skills.skill",
-    "pk": 8,
-    "fields": {
-      "portfolio": 2,
-      "skill_name": "Bootstrap",
-      "skill_category": "Web Development",
-      "proficiency_level": "intermediate"
-    }
-  },
-  {
-    "model": "skills.skill",
-    "pk": 9,
-    "fields": {
-      "portfolio": 2,
-      "skill_name": "TensorFlow",
-      "skill_category": "AI/ML",
-      "proficiency_level": "intermediate"
-    }
-  },
-  {
-    "model": "skills.skill",
-    "pk": 10,
-    "fields": {
-      "portfolio": 2,
-      "skill_name": "Pandas",
-      "skill_category": "AI/ML",
-      "proficiency_level": "intermediate"
-    }
-  },
-  {
-    "model": "skills.skill",
-    "pk": 11,
-    "fields": {
-      "portfolio": 2,
-      "skill_name": "NumPy",
-      "skill_category": "AI/ML",
-      "proficiency_level": "intermediate"
-    }
-  },
-  {
-    "model": "skills.skill",
-    "pk": 12,
-    "fields": {
-      "portfolio": 2,
-      "skill_name": "NLP",
-      "skill_category": "AI/ML",
-      "proficiency_level": "intermediate"
-    }
-  },
-  {
-    "model": "skills.skill",
-    "pk": 13,
-    "fields": {
-      "portfolio": 2,
-      "skill_name": "Scikit-learn",
-      "skill_category": "AI/ML",
-      "proficiency_level": "intermediate"
-    }
-  },
-  {
-    "model": "skills.skill",
-    "pk": 14,
-    "fields": {
-      "portfolio": 2,
-      "skill_name": "Git",
-      "skill_category": "Tools",
-      "proficiency_level": "intermediate"
-    }
-  },
-  {
-    "model": "skills.skill",
-    "pk": 15,
-    "fields": {
-      "portfolio": 2,
-      "skill_name": "GitHub",
-      "skill_category": "Tools",
-      "proficiency_level": "intermediate"
-    }
-  },
-  {
-    "model": "skills.skill",
-    "pk": 16,
-    "fields": {
-      "portfolio": 2,
-      "skill_name": "MySQL",
-      "skill_category": "Tools",
-      "proficiency_level": "intermediate"
-    }
-  },
-  {
-    "model": "skills.skill",
-    "pk": 17,
-    "fields": {
-      "portfolio": 2,
-      "skill_name": "VS Code",
-      "skill_category": "Tools",
-      "proficiency_level": "advanced"
-    }
-  },
-  {
-    "model": "skills.skill",
-    "pk": 18,
-    "fields": {
-      "portfolio": 2,
-      "skill_name": "Figma",
-      "skill_category": "Tools",
-      "proficiency_level": "intermediate"
-    }
-  },
-  {
-    "model": "skills.skill",
-    "pk": 19,
-    "fields": {
-      "portfolio": 2,
-      "skill_name": "Communication",
-      "skill_category": "Soft Skills",
-      "proficiency_level": "advanced"
-    }
-  },
-  {
-    "model": "skills.skill",
-    "pk": 20,
-    "fields": {
-      "portfolio": 2,
-      "skill_name": "Teamwork",
-      "skill_category": "Soft Skills",
-      "proficiency_level": "advanced"
-    }
-  },
-  {
-    "model": "skills.skill",
-    "pk": 21,
-    "fields": {
-      "portfolio": 2,
-      "skill_name": "Problem Solving",
-      "skill_category": "Soft Skills",
-      "proficiency_level": "advanced"
-    }
-  },
-  {
-    "model": "skills.skill",
-    "pk": 22,
-    "fields": {
-      "portfolio": 2,
-      "skill_name": "Time Management",
-      "skill_category": "Soft Skills",
-      "proficiency_level": "advanced"
-    }
-  },
-  {
-    "model": "projects.project",
-    "pk": 1,
-    "fields": {
-      "portfolio": 2,
-      "project_title": "School Management System",
-      "project_description": "A web-based system for managing students, teachers, attendance, and grades.",
-      "technologies_used": "Django, HTML, CSS, JavaScript, MySQL",
-      "project_link": ""
-    }
-  },
-  {
-    "model": "projects.project",
-    "pk": 2,
-    "fields": {
-      "portfolio": 2,
-      "project_title": "Cadet Management System",
-      "project_description": "An application to manage cadet records, schedules, and performance tracking.",
-      "technologies_used": "Python, SQL, Bootstrap",
-      "project_link": ""
-    }
-  },
-  {
-    "model": "projects.project",
-    "pk": 3,
-    "fields": {
-      "portfolio": 2,
-      "project_title": "Sentiment Analysis Web App",
-      "project_description": "A web app that analyzes text sentiment using NLP and machine learning models.",
-      "technologies_used": "Python, TensorFlow, NLP, JavaScript",
-      "project_link": ""
-    }
-  },
-  {
-    "model": "projects.project",
-    "pk": 4,
-    "fields": {
-      "portfolio": 2,
-      "project_title": "IoT Home Automation Project",
-      "project_description": "An IoT project for controlling home devices remotely with sensor integration.",
-      "technologies_used": "IoT, Python, Embedded Systems",
-      "project_link": ""
-    }
-  },
-  {
-    "model": "skills.skill",
-    "pk": 23,
-    "fields": {
-      "portfolio": 1,
-      "skill_name": "React.js",
-      "skill_category": "Frontend",
-      "proficiency_level": "advanced"
-    }
-  },
-  {
-    "model": "skills.skill",
-    "pk": 24,
-    "fields": {
-      "portfolio": 1,
-      "skill_name": "Next.js",
-      "skill_category": "Frontend",
-      "proficiency_level": "advanced"
-    }
-  },
-  {
-    "model": "skills.skill",
-    "pk": 25,
-    "fields": {
-      "portfolio": 1,
-      "skill_name": "TypeScript",
-      "skill_category": "Programming",
-      "proficiency_level": "advanced"
-    }
-  },
-  {
-    "model": "skills.skill",
-    "pk": 26,
-    "fields": {
-      "portfolio": 1,
-      "skill_name": "Django",
-      "skill_category": "Backend",
-      "proficiency_level": "advanced"
-    }
-  },
-  {
-    "model": "skills.skill",
-    "pk": 27,
-    "fields": {
-      "portfolio": 1,
-      "skill_name": "Node.js",
-      "skill_category": "Backend",
-      "proficiency_level": "advanced"
-    }
-  },
-  {
-    "model": "skills.skill",
-    "pk": 28,
-    "fields": {
-      "portfolio": 1,
-      "skill_name": "PostgreSQL",
-      "skill_category": "Database",
-      "proficiency_level": "intermediate"
-    }
-  },
-  {
-    "model": "projects.project",
-    "pk": 5,
-    "fields": {
-      "portfolio": 1,
-      "project_title": "Dynamic Portfolio Website",
-      "project_description": "A Django-based dynamic portfolio web application with multi-portfolio support, admin panel, and responsive UI.",
-      "technologies_used": "Django, HTML, CSS, JavaScript, SQLite",
-      "project_link": ""
-    }
+{
+  "model": "bio.bio",
+  "pk": 1,
+  "fields": {
+    "slug": "abdul-wahab",
+    "name": "Abdul Wahab",
+    "job_title": "Software Engineer",
+    "profile_picture": "",
+    "professional_description": "Full Stack Software Engineer with experience building scalable enterprise web applications using React.js, Next.js, Angular, TypeScript, ASP.NET Core, C#, Node.js, and NestJS. Skilled in developing responsive frontend interfaces, secure REST APIs, microservices, database-driven systems, and distributed workflows using PostgreSQL, SQL Server, Redis, RabbitMQ, and Azure Service Bus. Experienced in healthcare and financial software domains, with a focus on performance optimization, clean architecture, API integration, and Agile delivery.",
+    "email": "abdwahab0472@gmail.com",
+    "phone": "+92 316 0445946",
+    "location": "Lahore, Pakistan",
+    "linkedin": "https://www.linkedin.com/in/abdul-wahab-986478314/",
+    "github": "https://github.com/abdWahab07",
+    "website": "https://www.abdwahab.com"
   }
+},
+{
+  "model": "bio.bio",
+  "pk": 2,
+  "fields": {
+    "slug": "laiba-zainab",
+    "name": "Laiba Zainab",
+    "job_title": "Software Engineer | Web Developer | AI/ML Enthusiast",
+    "profile_picture": "",
+    "professional_description": "Computer Science undergraduate at UMT Lahore with hands-on experience in web development, database systems, AI/ML fundamentals, and teaching computer science. Skilled in developing practical software solutions and explaining technical concepts clearly.",
+    "email": "laibazainab358358@gmail.com",
+    "phone": "+92-3429782818",
+    "location": "Lahore, Pakistan",
+    "linkedin": "https://linkedin.com/in/laiba-zainab-61122a411",
+    "github": "",
+    "website": ""
+  }
+},
+{
+  "model": "education.education",
+  "pk": 1,
+  "fields": {
+    "portfolio": 2,
+    "degree": "BS Computer Science",
+    "institute_name": "University of Management and Technology (UMT), Lahore",
+    "start_year": 2022,
+    "end_year": null,
+    "description": "7th Semester — Present. Relevant Courses: Data Structures, OOP, DBMS, Software Engineering, AI, Networks."
+  }
+},
+{
+  "model": "education.education",
+  "pk": 2,
+  "fields": {
+    "portfolio": 1,
+    "degree": "Bachelor of Computer Science",
+    "institute_name": "University of Management and Technology",
+    "start_year": 2022,
+    "end_year": 2026,
+    "description": "BS Computer Science — 2022 to 2026"
+  }
+},
+{
+  "model": "education.education",
+  "pk": 3,
+  "fields": {
+    "portfolio": 1,
+    "degree": "FSc Pre-Engineering",
+    "institute_name": "Punjab Group of Colleges",
+    "start_year": 2020,
+    "end_year": 2022,
+    "description": ""
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 1,
+  "fields": {
+    "portfolio": 2,
+    "skill_name": "Java",
+    "skill_category": "Programming",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 2,
+  "fields": {
+    "portfolio": 2,
+    "skill_name": "Python",
+    "skill_category": "Programming",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 3,
+  "fields": {
+    "portfolio": 2,
+    "skill_name": "C++",
+    "skill_category": "Programming",
+    "proficiency_level": "intermediate"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 4,
+  "fields": {
+    "portfolio": 2,
+    "skill_name": "SQL",
+    "skill_category": "Programming",
+    "proficiency_level": "intermediate"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 5,
+  "fields": {
+    "portfolio": 2,
+    "skill_name": "HTML5",
+    "skill_category": "Web Development",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 6,
+  "fields": {
+    "portfolio": 2,
+    "skill_name": "CSS3",
+    "skill_category": "Web Development",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 7,
+  "fields": {
+    "portfolio": 2,
+    "skill_name": "JavaScript",
+    "skill_category": "Web Development",
+    "proficiency_level": "intermediate"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 8,
+  "fields": {
+    "portfolio": 2,
+    "skill_name": "Bootstrap",
+    "skill_category": "Web Development",
+    "proficiency_level": "intermediate"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 9,
+  "fields": {
+    "portfolio": 2,
+    "skill_name": "TensorFlow",
+    "skill_category": "AI/ML",
+    "proficiency_level": "intermediate"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 10,
+  "fields": {
+    "portfolio": 2,
+    "skill_name": "Pandas",
+    "skill_category": "AI/ML",
+    "proficiency_level": "intermediate"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 11,
+  "fields": {
+    "portfolio": 2,
+    "skill_name": "NumPy",
+    "skill_category": "AI/ML",
+    "proficiency_level": "intermediate"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 12,
+  "fields": {
+    "portfolio": 2,
+    "skill_name": "NLP",
+    "skill_category": "AI/ML",
+    "proficiency_level": "intermediate"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 13,
+  "fields": {
+    "portfolio": 2,
+    "skill_name": "Scikit-learn",
+    "skill_category": "AI/ML",
+    "proficiency_level": "intermediate"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 14,
+  "fields": {
+    "portfolio": 2,
+    "skill_name": "Git",
+    "skill_category": "Tools",
+    "proficiency_level": "intermediate"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 15,
+  "fields": {
+    "portfolio": 2,
+    "skill_name": "GitHub",
+    "skill_category": "Tools",
+    "proficiency_level": "intermediate"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 16,
+  "fields": {
+    "portfolio": 2,
+    "skill_name": "MySQL",
+    "skill_category": "Tools",
+    "proficiency_level": "intermediate"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 17,
+  "fields": {
+    "portfolio": 2,
+    "skill_name": "VS Code",
+    "skill_category": "Tools",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 18,
+  "fields": {
+    "portfolio": 2,
+    "skill_name": "Figma",
+    "skill_category": "Tools",
+    "proficiency_level": "intermediate"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 19,
+  "fields": {
+    "portfolio": 2,
+    "skill_name": "Communication",
+    "skill_category": "Soft Skills",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 20,
+  "fields": {
+    "portfolio": 2,
+    "skill_name": "Teamwork",
+    "skill_category": "Soft Skills",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 21,
+  "fields": {
+    "portfolio": 2,
+    "skill_name": "Problem Solving",
+    "skill_category": "Soft Skills",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 22,
+  "fields": {
+    "portfolio": 2,
+    "skill_name": "Time Management",
+    "skill_category": "Soft Skills",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 29,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "C#",
+    "skill_category": "Languages",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 30,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "JavaScript",
+    "skill_category": "Languages",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 31,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "TypeScript",
+    "skill_category": "Languages",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 32,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "SQL",
+    "skill_category": "Languages",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 33,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "HTML5",
+    "skill_category": "Languages",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 34,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "CSS3",
+    "skill_category": "Languages",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 35,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "React.js",
+    "skill_category": "Frontend",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 36,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "Next.js",
+    "skill_category": "Frontend",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 37,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "Angular",
+    "skill_category": "Frontend",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 38,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "NgRx",
+    "skill_category": "Frontend",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 39,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "Zustand",
+    "skill_category": "Frontend",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 40,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "Tailwind CSS",
+    "skill_category": "Frontend",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 41,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "Bootstrap",
+    "skill_category": "Frontend",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 42,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "PrimeNG",
+    "skill_category": "Frontend",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 43,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "Responsive Web Design",
+    "skill_category": "Frontend",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 44,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "ASP.NET Core",
+    "skill_category": "Backend",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 45,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": ".NET",
+    "skill_category": "Backend",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 46,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "Node.js",
+    "skill_category": "Backend",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 47,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "NestJS",
+    "skill_category": "Backend",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 48,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "REST APIs",
+    "skill_category": "Backend",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 49,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "Microservices",
+    "skill_category": "Backend",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 50,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "Entity Framework",
+    "skill_category": "Backend",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 51,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "PostgreSQL",
+    "skill_category": "Databases",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 52,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "SQL Server",
+    "skill_category": "Databases",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 53,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "Database Design",
+    "skill_category": "Databases",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 54,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "Query Optimization",
+    "skill_category": "Databases",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 55,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "Stored Procedures",
+    "skill_category": "Databases",
+    "proficiency_level": "intermediate"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 56,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "RabbitMQ",
+    "skill_category": "Messaging & Caching",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 57,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "Redis",
+    "skill_category": "Messaging & Caching",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 58,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "Azure Service Bus",
+    "skill_category": "Messaging & Caching",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 59,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "Asynchronous Processing",
+    "skill_category": "Messaging & Caching",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 60,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "Distributed Systems",
+    "skill_category": "Messaging & Caching",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 61,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "Unit Testing",
+    "skill_category": "Testing & Quality",
+    "proficiency_level": "intermediate"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 62,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "Integration Testing",
+    "skill_category": "Testing & Quality",
+    "proficiency_level": "intermediate"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 63,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "API Testing",
+    "skill_category": "Testing & Quality",
+    "proficiency_level": "intermediate"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 64,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "Debugging",
+    "skill_category": "Testing & Quality",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 65,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "Code Refactoring",
+    "skill_category": "Testing & Quality",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 66,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "Performance Optimization",
+    "skill_category": "Testing & Quality",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 67,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "Git",
+    "skill_category": "Tools & Practices",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 68,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "Agile/Scrum",
+    "skill_category": "Tools & Practices",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 69,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "API Integration",
+    "skill_category": "Tools & Practices",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 70,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "Clean Architecture",
+    "skill_category": "Tools & Practices",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 71,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "Software Design Patterns",
+    "skill_category": "Tools & Practices",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "skills.skill",
+  "pk": 72,
+  "fields": {
+    "portfolio": 1,
+    "skill_name": "Cross-Functional Collaboration",
+    "skill_category": "Tools & Practices",
+    "proficiency_level": "advanced"
+  }
+},
+{
+  "model": "experience.experience",
+  "pk": 1,
+  "fields": {
+    "portfolio": 2,
+    "role_title": "Computer Science Teacher",
+    "organization": "Bright Future High School",
+    "start_date": "2024-01-01",
+    "end_date": null,
+    "description": "Teach programming, MS Office, and computer science fundamentals while guiding lab activities."
+  }
+},
+{
+  "model": "experience.experience",
+  "pk": 2,
+  "fields": {
+    "portfolio": 1,
+    "role_title": "Software Engineer",
+    "organization": "iCareManager — United States (US)",
+    "start_date": "2025-07-01",
+    "end_date": null,
+    "description": "Led end-to-end development of the Staff Scheduler module using React.js, Next.js, NestJS, ASP.NET Core, TypeScript, and C#. Designed and developed scalable REST APIs and microservices. Implemented advanced state management for complex scheduling workflows. Developed eMAR module features including Vital Readings and Medication Administration. Optimized SQL queries, stored procedures, and backend APIs. Integrated RabbitMQ, Redis, and Azure Service Bus for distributed systems and asynchronous processing. Collaborated with cross-functional teams in Agile/Scrum environments."
+  }
+},
+{
+  "model": "experience.experience",
+  "pk": 3,
+  "fields": {
+    "portfolio": 1,
+    "role_title": "Associate Software Engineer",
+    "organization": "NETSOL Technologies Ltd. — Lahore, Pakistan",
+    "start_date": "2024-09-01",
+    "end_date": "2025-07-01",
+    "description": "Contributed to NETSOL Financial Suite (NFS), a large-scale enterprise financing platform. Developed reusable UI framework controls and enterprise screens using Angular, TypeScript, PrimeNG, HTML5, and CSS3. Designed and maintained REST APIs for User Management System and Configuration Management System modules using ASP.NET Core and C#. Optimized application performance through code refactoring, API enhancements, and database improvements. Participated in Agile/Scrum ceremonies, sprint planning, code reviews, and production releases."
+  }
+},
+{
+  "model": "experience.experience",
+  "pk": 4,
+  "fields": {
+    "portfolio": 1,
+    "role_title": "Software Engineer Intern",
+    "organization": "NETSOL Technologies Ltd. — Lahore, Pakistan",
+    "start_date": "2024-06-01",
+    "end_date": "2024-09-01",
+    "description": "Supported full-stack web application development using Angular, TypeScript, ASP.NET Core, and C#. Developed REST API endpoints, CRUD operations, and business logic for enterprise applications. Assisted in frontend development, backend development, debugging, testing, and issue resolution. Collaborated with senior engineers in an Agile environment."
+  }
+},
+{
+  "model": "projects.project",
+  "pk": 1,
+  "fields": {
+    "portfolio": 2,
+    "project_title": "School Management System",
+    "project_description": "A web-based system for managing students, teachers, attendance, and grades.",
+    "technologies_used": "Django, HTML, CSS, JavaScript, MySQL",
+    "project_link": ""
+  }
+},
+{
+  "model": "projects.project",
+  "pk": 2,
+  "fields": {
+    "portfolio": 2,
+    "project_title": "Cadet Management System",
+    "project_description": "An application to manage cadet records, schedules, and performance tracking.",
+    "technologies_used": "Python, SQL, Bootstrap",
+    "project_link": ""
+  }
+},
+{
+  "model": "projects.project",
+  "pk": 3,
+  "fields": {
+    "portfolio": 2,
+    "project_title": "Sentiment Analysis Web App",
+    "project_description": "A web app that analyzes text sentiment using NLP and machine learning models.",
+    "technologies_used": "Python, TensorFlow, NLP, JavaScript",
+    "project_link": ""
+  }
+},
+{
+  "model": "projects.project",
+  "pk": 4,
+  "fields": {
+    "portfolio": 2,
+    "project_title": "IoT Home Automation Project",
+    "project_description": "An IoT project for controlling home devices remotely with sensor integration.",
+    "technologies_used": "IoT, Python, Embedded Systems",
+    "project_link": ""
+  }
+},
+{
+  "model": "projects.project",
+  "pk": 6,
+  "fields": {
+    "portfolio": 1,
+    "project_title": "HR Management System (Full Stack Enterprise Platform)",
+    "project_description": "Designed and developed a full-stack HR Management System covering Employee Management, Attendance Tracking, Payroll Processing, Performance Management, and Recruitment System. Built a microservices-based backend using ASP.NET Core with a responsive Next.js frontend. Implemented advanced state management with Zustand, optimized PostgreSQL schema and queries, integrated Redis caching and RabbitMQ messaging for asynchronous HR operations, and built secure REST APIs with role-based access control.",
+    "technologies_used": "Next.js, React.js, ASP.NET Core, C#, Microservices, PostgreSQL, Redis, RabbitMQ, REST APIs, Zustand, Git, Agile/Scrum",
+    "project_link": ""
+  }
+},
+{
+  "model": "projects.project",
+  "pk": 7,
+  "fields": {
+    "portfolio": 1,
+    "project_title": "Dynamic Portfolio Website",
+    "project_description": "A Django-based dynamic portfolio web application with multi-portfolio support, admin panel, responsive UI, and static export for Netlify deployment.",
+    "technologies_used": "Django, HTML, CSS, JavaScript, SQLite",
+    "project_link": ""
+  }
+}
 ]

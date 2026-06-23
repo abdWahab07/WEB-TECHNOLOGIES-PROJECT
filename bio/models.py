@@ -31,6 +31,7 @@ class Bio(models.Model):
     )
     linkedin = models.URLField(blank=True, help_text="LinkedIn profile URL")
     github = models.URLField(blank=True, help_text="GitHub profile URL")
+    website = models.URLField(blank=True, help_text="Personal portfolio or website URL")
 
     class Meta:
         verbose_name = "Bio"

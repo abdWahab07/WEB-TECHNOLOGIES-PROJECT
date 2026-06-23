@@ -36,6 +36,7 @@ class BioForm(StyledModelForm):
             "location",
             "linkedin",
             "github",
+            "website",
         ]
         widgets = {
             "professional_description": forms.Textarea(attrs={"rows": 4}),

@@ -7,7 +7,7 @@ pip install -r requirements.txt
 echo "Running database migrations..."
 python manage.py migrate --noinput
 
-echo "Loading portfolio data..."
+echo "Loading portfolio data from fixture..."
 python manage.py loaddata fixtures/portfolio_data.json
 
 echo "Exporting static site for Netlify..."

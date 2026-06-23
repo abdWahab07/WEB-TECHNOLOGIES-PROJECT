@@ -94,6 +94,9 @@
                 {% if bio.github %}
                 <p><strong>GitHub:</strong> <a href="{{ bio.github }}" target="_blank" rel="noopener noreferrer">{{ bio.github }}</a></p>
                 {% endif %}
+                {% if bio.website %}
+                <p><strong>Portfolio:</strong> <a href="{{ bio.website }}" target="_blank" rel="noopener noreferrer">{{ bio.website }}</a></p>
+                {% endif %}
                 {% if bio.location %}
                 <p><strong>Location:</strong> {{ bio.location }}</p>
                 {% endif %}
