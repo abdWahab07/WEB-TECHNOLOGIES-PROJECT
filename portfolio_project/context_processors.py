@@ -13,6 +13,7 @@ def portfolio_context(request):
         return {
             "bio": None,
             "portfolios": Bio.objects.all(),
+            "home_prefix": "",
             "has_education": False,
             "has_skills": False,
             "has_experience": False,
@@ -22,6 +23,7 @@ def portfolio_context(request):
     return {
         "bio": portfolio,
         "portfolios": Bio.objects.all(),
+        "home_prefix": "/laiba" if portfolio.slug == "laiba-zainab" else "",
         "has_education": Education.objects.filter(portfolio=portfolio).exists(),
         "has_skills": Skill.objects.filter(portfolio=portfolio).exists(),
         "has_experience": Experience.objects.filter(portfolio=portfolio).exists(),

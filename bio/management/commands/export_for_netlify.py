@@ -38,18 +38,17 @@ class Command(BaseCommand):
             if not Bio.objects.filter(slug=slug).exists():
                 continue
 
-            session = client.session
-            session["portfolio_slug"] = slug
-            session.save()
-
-            response = client.get("/", HTTP_HOST="127.0.0.1")
+            if slug == "laiba-zainab":
+                response = client.get("/laiba/", HTTP_HOST="127.0.0.1")
+            else:
+                response = client.get("/", HTTP_HOST="127.0.0.1")
             if response.status_code != 200:
                 self.stderr.write(
                     self.style.ERROR(f"Failed to export {slug}: HTTP {response.status_code}")
                 )
                 continue
 
-            html = self._rewrite_for_static(response.content.decode("utf-8"), slug)
+            html = response.content.decode("utf-8")
             output_path = PUBLISH_DIR / filename
             output_path.parent.mkdir(parents=True, exist_ok=True)
             output_path.write_text(html, encoding="utf-8")
@@ -64,16 +63,6 @@ class Command(BaseCommand):
         self._copy_media_files()
         self._write_redirects()
         self.stdout.write(self.style.SUCCESS(f"Static site ready in {PUBLISH_DIR}"))
-
-    def _rewrite_for_static(self, html, slug):
-        html = html.replace("/portfolio/abdul-wahab/", "/")
-        html = html.replace("/portfolio/laiba-zainab/", "/laiba/")
-
-        if slug == "laiba-zainab":
-            html = html.replace('href="/#', 'href="/laiba/#')
-            html = html.replace('href="/"', 'href="/laiba/"')
-
-        return html
 
     def _copy_static_files(self):
         static_src = Path(settings.BASE_DIR) / "static"

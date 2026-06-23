@@ -13,22 +13,33 @@ from .portfolio_utils import get_active_portfolio
 
 
 def home(request):
-    portfolio = get_active_portfolio(request)
+    return _render_portfolio(request, "abdul-wahab")
+
+
+def laiba_home(request):
+    return _render_portfolio(request, "laiba-zainab")
+
+
+def switch_portfolio(request, slug):
+    portfolio = get_object_or_404(Bio, slug=slug)
+    return redirect(portfolio.home_url)
+
+
+def _render_portfolio(request, slug):
+    request.session["portfolio_slug"] = slug
+    portfolio = Bio.objects.filter(slug=slug).first() or Bio.objects.first()
+    home_prefix = "/laiba" if portfolio and portfolio.slug == "laiba-zainab" else ""
+
     context = {
         "bio": portfolio,
         "portfolios": Bio.objects.all(),
+        "home_prefix": home_prefix,
         "education_list": Education.objects.filter(portfolio=portfolio),
         "skills_list": Skill.objects.filter(portfolio=portfolio),
         "experience_list": Experience.objects.filter(portfolio=portfolio),
         "projects_list": Project.objects.filter(portfolio=portfolio),
     }
     return render(request, "home.html", context)
-
-
-def switch_portfolio(request, slug):
-    portfolio = get_object_or_404(Bio, slug=slug)
-    request.session["portfolio_slug"] = portfolio.slug
-    return redirect("home")
 
 
 @staff_member_required

@@ -48,3 +48,11 @@ class Bio(models.Model):
         if len(parts) == 1:
             return parts[0][:1].upper()
         return f"{parts[0][:1]}{parts[-1][:1]}".upper()
+
+    @property
+    def home_url(self):
+        if self.slug == "abdul-wahab":
+            return "/"
+        if self.slug == "laiba-zainab":
+            return "/laiba/"
+        return f"/portfolio/{self.slug}/"

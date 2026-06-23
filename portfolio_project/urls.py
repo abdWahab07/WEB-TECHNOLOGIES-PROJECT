@@ -13,6 +13,7 @@ admin.site.index_title = "Manage Portfolio Content"
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.home, name="home"),
+    path("laiba/", views.laiba_home, name="laiba_home"),
     path("portfolio/<slug:slug>/", views.switch_portfolio, name="switch_portfolio"),
     path("createPortfolio/", views.create_portfolio, name="create_portfolio"),
     path("bio/", include("bio.urls")),

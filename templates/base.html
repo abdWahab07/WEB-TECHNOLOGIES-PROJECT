@@ -14,12 +14,12 @@
 <body>
     <header class="site-header" id="top">
         <nav class="navbar container">
-            <a href="{% url 'home' %}" class="logo">{% if bio %}{{ bio.name }}{% else %}Portfolio{% endif %}</a>
+            <a href="{% if bio %}{{ bio.home_url }}{% else %}/{% endif %}" class="logo">{% if bio %}{{ bio.name }}{% else %}Portfolio{% endif %}</a>
             {% if portfolios.count > 1 %}
             <div class="portfolio-switcher" role="group" aria-label="Switch portfolio">
                 {% for portfolio in portfolios %}
                 <a
-                    href="{% url 'switch_portfolio' portfolio.slug %}"
+                    href="{{ portfolio.home_url }}"
                     class="portfolio-switch-btn{% if bio and bio.slug == portfolio.slug %} is-active{% endif %}"
                 >
                     {{ portfolio.name }}
@@ -44,7 +44,7 @@
                         <div class="portfolio-switcher portfolio-switcher--stacked">
                             {% for portfolio in portfolios %}
                             <a
-                                href="{% url 'switch_portfolio' portfolio.slug %}"
+                                href="{{ portfolio.home_url }}"
                                 class="portfolio-switch-btn{% if bio and bio.slug == portfolio.slug %} is-active{% endif %}"
                             >
                                 {{ portfolio.name }}
@@ -53,13 +53,13 @@
                         </div>
                     </li>
                     {% endif %}
-                    {% if bio %}<li><a href="{% url 'home' %}#hero">Home</a></li>{% endif %}
-                    {% if bio %}<li><a href="{% url 'home' %}#about">About</a></li>{% endif %}
-                    {% if has_education %}<li><a href="{% url 'home' %}#education">Education</a></li>{% endif %}
-                    {% if has_skills %}<li><a href="{% url 'home' %}#skills">Skills</a></li>{% endif %}
-                    {% if has_experience %}<li><a href="{% url 'home' %}#experience">Experience</a></li>{% endif %}
-                    {% if has_projects %}<li><a href="{% url 'home' %}#projects">Projects</a></li>{% endif %}
-                    {% if bio %}<li><a href="{% url 'home' %}#contact">Contact</a></li>{% endif %}
+                    {% if bio %}<li><a href="{{ home_prefix }}/#hero">Home</a></li>{% endif %}
+                    {% if bio %}<li><a href="{{ home_prefix }}/#about">About</a></li>{% endif %}
+                    {% if has_education %}<li><a href="{{ home_prefix }}/#education">Education</a></li>{% endif %}
+                    {% if has_skills %}<li><a href="{{ home_prefix }}/#skills">Skills</a></li>{% endif %}
+                    {% if has_experience %}<li><a href="{{ home_prefix }}/#experience">Experience</a></li>{% endif %}
+                    {% if has_projects %}<li><a href="{{ home_prefix }}/#projects">Projects</a></li>{% endif %}
+                    {% if bio %}<li><a href="{{ home_prefix }}/#contact">Contact</a></li>{% endif %}
                 </ul>
                 <div class="mobile-drawer-footer" aria-hidden="true">
                     <span class="mobile-drawer-dot"></span>
