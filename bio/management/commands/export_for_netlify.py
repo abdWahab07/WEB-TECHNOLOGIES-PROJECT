@@ -1,4 +1,5 @@
 import shutil
+import sys
 from pathlib import Path
 
 from django.conf import settings
@@ -24,13 +25,14 @@ class Command(BaseCommand):
                     "No portfolio data found. Run migrations and add data first."
                 )
             )
-            return
+            sys.exit(1)
 
         if PUBLISH_DIR.exists():
             shutil.rmtree(PUBLISH_DIR)
 
         PUBLISH_DIR.mkdir(parents=True)
         client = Client(HTTP_HOST="127.0.0.1")
+        exported = 0
 
         for slug, filename in STATIC_MAP.items():
             if not Bio.objects.filter(slug=slug).exists():
@@ -51,7 +53,12 @@ class Command(BaseCommand):
             output_path = PUBLISH_DIR / filename
             output_path.parent.mkdir(parents=True, exist_ok=True)
             output_path.write_text(html, encoding="utf-8")
+            exported += 1
             self.stdout.write(f"Exported {slug} -> {output_path.relative_to(PUBLISH_DIR)}")
+
+        if exported == 0:
+            self.stderr.write(self.style.ERROR("No portfolio pages were exported."))
+            sys.exit(1)
 
         self._copy_static_files()
         self._copy_media_files()
